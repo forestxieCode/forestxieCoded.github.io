@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>内部交流</title>
+    <link rel="stylesheet" href="./lib/css/base.css">
+    <link rel="stylesheet" href="./lib/css/laydate.css">
+    <!-- <link rel="stylesheet" href="./lib/css/jquery.fullPage.css"> -->
+    <!-- <link rel="stylesheet" href="./lib/css/bootstrap.css"> -->
+    <link rel="stylesheet" href="./css/communion.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/animate.css">
+    
+</head>
+<body>
+    <div class="communion">
+        <div class="communion-connect" style="background-image: url('./img/communion/background02.jpg')">
+            <div class="login">
+                <div class="tit">
+                    <div class="line">
+                       
+                    </div>
+                    <span class="point"></span>
+                    <p>内部交流</p>
+                    <span class="point"></span>
+                    <div class="line">   
+                    </div>
+                </div>
+                <div class="login-connect">
+                    <div class="item">
+                        <span >用户名:</span>
+                        
+                        <input type="text" placeholder="请输入用户名" id="username">
+                    </div>
+                    <div class="item">
+                        <span >密&nbsp;&nbsp;&nbsp;码:</span>
+                            <input placeholder="请输入密码" id="password" type="password">
+                    </div>
+                </div>
+                <div class="button">
+                    登入
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./lib/js/jquery-1.8.3.min.js"></script>
+    <script src="./lib/js/laydate.js"></script>
+    <script src="./js/common.js"></script>
+    <!-- <script src="./lib/js/jquery.fullPage.min.js"></script> -->
+    <script>
+        $(function(){
+            $(".communion-connect").height($(window).height()) 
+            $('.button').on("click",function(){
+                var user  = $("#username").val()
+                var pass  = $("#password").val()
+                if(!user){
+                    alert('请输入用户名')
+                }else if(!pass){
+                    alert('请输入密码')
+                }
+               if(user=='admin'&&pass=='123'){
+                    sessionStorage.setItem('userToken', '123123123')
+                    window.location.href = window.location.origin + "/communion-detail02.html";
+                    //  location.href="./communion-detail02.html"
+               }else {
+                    alert('用户名或密码错误') 
+               }
+            })
+        })
+    </script>
+</body>
+</html>
